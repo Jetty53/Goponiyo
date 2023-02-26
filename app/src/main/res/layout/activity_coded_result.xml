@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/topToolbarLAyout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/top_toolbar_border_layout"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/goPrevActivityButton"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:background="@drawable/top_toolbar_rounded_menu_drawer_button"
+            android:src="@drawable/arrow_back_black_18dp" />
+
+        <TextView
+            android:id="@+id/activityTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/ubuntu"
+            android:textAlignment="center"
+            android:textColor="#311B92"
+            android:textSize="25sp" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="70dp"
+        app:layout_constraintTop_toBottomOf="@+id/topToolbarLAyout">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+
+                    <LinearLayout
+                        android:id="@+id/scanCodeInputTextLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="170dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/input_edittext_linearlayout_top_rounded_corners"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="145dp"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginEnd="2dp"
+                            android:background="@drawable/input_edittext_top_corners_rounded_layout"
+                            android:padding="5dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <!--                            <ScrollView-->
+                            <!--                                android:layout_width="match_parent"-->
+                            <!--                                android:layout_height="match_parent"-->
+                            <!--                                android:fillViewport="true"-->
+                            <!--                                android:orientation="vertical"-->
+                            <!--                                android:scrollbars="none">-->
+
+                            <TextView
+                                android:id="@+id/inputTextView"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/input_edittext_top_corners_rounded_layout"
+                                android:padding="10dp"
+                                android:scrollbars="vertical"
+                                android:textColor="@color/secondaryThemeColor"
+                                android:textSize="20sp" />
+
+                            <!--                            </ScrollView>-->
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/inputDialogAdLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/zerothArrowLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:background="@android:color/transparent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/scanCodeInputTextLayout">
+
+                        <ImageView
+                            android:id="@+id/zerothLeftDownArrowImageView"
+                            android:layout_width="32dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/arrow_downward_black_18dp"
+                            app:layout_constraintEnd_toStartOf="@+id/middleLinearLayoutOne"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <LinearLayout
+                            android:id="@+id/middleLinearLayoutOne"
+                            android:layout_width="32dp"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:orientation="horizontal"
+                            android:textColor="@color/primaryThemeColor"
+                            android:textSize="25sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/zerothRightDownArrowImageView"
+                            android:layout_width="32dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/arrow_downward_black_18dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/middleLinearLayoutOne" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cipherTweakLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/input_edittext_linearlayout_four_rounded_corners"
+                        android:paddingStart="15dp"
+                        android:paddingTop="15dp"
+                        android:paddingEnd="15dp"
+                        android:paddingBottom="20dp"
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/zerothArrowLayout">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/firstCipherWholeLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="2dp"
+                            android:background="@drawable/four_corner_rounder_white_shadow_layout"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/cipherTweakLayout">
+
+                            <TextView
+                                android:id="@+id/firstCipherTextView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="5dp"
+                                android:paddingStart="30dp"
+                                android:text="TEST TEXT"
+                                android:textColor="@color/secondaryThemeColor"
+                                android:textSize="20sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/firstAddBtnLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginEnd="2dp"
+                            android:background="@android:color/transparent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/firstCipherWholeLayout">
+
+                            <ImageView
+                                android:id="@+id/firstLeftDownArrowImageView"
+                                android:layout_width="32dp"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/arrow_downward_black_18dp"
+                                app:layout_constraintEnd_toStartOf="@+id/firstPlusBtn"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <ImageButton
+                                android:id="@+id/firstPlusBtn"
+                                android:layout_width="32dp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/coded_res_plus_round_blue_btn"
+                                android:src="@drawable/add_white_18dp"
+                                android:textColor="@color/primaryThemeColor"
+                                android:textSize="25sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/firstRightDownArrowImageView"
+                                android:layout_width="32dp"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/arrow_downward_black_18dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/firstPlusBtn" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/firstCipherSpinnerLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="2dp"
+                            android:background="@drawable/four_corner_rounder_white_shadow_layout"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/firstAddBtnLayout">
+
+                            <com.jaredrummler.materialspinner.MaterialSpinner
+                                android:id="@+id/firstCipherSpinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="11dp"
+                                android:layout_marginTop="1dp"
+                                android:layout_marginEnd="60dp"
+                                android:layout_marginBottom="1dp"
+                                android:textSize="20sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/firstSpinnerDelBtn"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:ms_arrow_tint="@color/secondaryThemeColor"
+                                app:ms_dropdown_max_height="200dp"
+                                app:ms_padding_bottom="0dp"
+                                app:ms_padding_top="0dp"
+                                app:ms_text_color="@color/secondaryThemeColor" />
+
+                            <ImageButton
+                                android:id="@+id/firstSpinnerDelBtn"
+                                android:layout_width="40dp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/coded_res_plus_round_blue_btn"
+                                android:src="@drawable/delete_white_18dp"
+                                android:textColor="@color/primaryThemeColor"
+                                android:textSize="25sp"
+                                app:layout_constraintEnd_toEndOf="parent" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/secondAddBtnLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginEnd="2dp"
+                            android:background="@android:color/transparent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/firstCipherSpinnerLayout">
+
+                            <ImageView
+                                android:id="@+id/secondLeftDownArrowImageView"
+                                android:layout_width="32dp"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/arrow_downward_black_18dp"
+                                app:layout_constraintEnd_toStartOf="@+id/secondPlusBtn"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+
+                            <ImageButton
+                                android:id="@+id/secondPlusBtn"
+                                android:layout_width="32dp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/coded_res_plus_round_blue_btn"
+                                android:src="@drawable/add_white_18dp"
+                                android:textColor="@color/primaryThemeColor"
+                                android:textSize="25sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/secondRightDownArrowImageView"
+                                android:layout_width="32dp"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/arrow_downward_black_18dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/secondPlusBtn" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/secondCipherSpinnerLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="2dp"
+                            android:background="@drawable/four_corner_rounder_white_shadow_layout"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/secondAddBtnLayout">
+
+                            <com.jaredrummler.materialspinner.MaterialSpinner
+                                android:id="@+id/secondCipherSpinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="11dp"
+                                android:layout_marginTop="1dp"
+                                android:layout_marginEnd="60dp"
+                                android:layout_marginBottom="1dp"
+                                android:textSize="20sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/secondSpinnerDelBtn"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:ms_arrow_tint="@color/secondaryThemeColor"
+                                app:ms_dropdown_max_height="200dp"
+                                app:ms_padding_bottom="0dp"
+                                app:ms_padding_top="0dp"
+                                app:ms_text_color="@color/secondaryThemeColor" />
+
+                            <ImageButton
+                                android:id="@+id/secondSpinnerDelBtn"
+                                android:layout_width="40dp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/coded_res_plus_round_blue_btn"
+                                android:src="@drawable/delete_white_18dp"
+                                android:textColor="@color/primaryThemeColor"
+                                android:textSize="25sp"
+                                app:layout_constraintEnd_toEndOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/lastArrowLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="2dp"
+                        android:background="@android:color/transparent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cipherTweakLayout">
+
+
+                        <ImageView
+                            android:id="@+id/thirdLeftDownArrowImageView"
+                            android:layout_width="32dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="2dp"
+                            android:src="@drawable/arrow_downward_black_18dp"
+                            app:layout_constraintEnd_toStartOf="@+id/middleLinearLayout"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <LinearLayout
+                            android:id="@+id/middleLinearLayout"
+                            android:layout_width="30dp"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:orientation="horizontal"
+                            android:textColor="@color/primaryThemeColor"
+                            android:textSize="25sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/thirdRightDownArrowImageView"
+                            android:layout_width="32dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="2dp"
+                            android:src="@drawable/arrow_downward_black_18dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/middleLinearLayout" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <LinearLayout
+                        android:id="@+id/outputTextLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="170dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/input_edittext_linearlayout_bottom_rounded_corners"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lastArrowLayout">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="@drawable/input_edittext_bottom_corners_rounded_layout"
+                            android:padding="5dp">
+
+                            <ScrollView
+                                android:id="@+id/outputTextViewScrollView"
+                                android:layout_width="match_parent"
+                                android:layout_height="fill_parent"
+                                android:fillViewport="true"
+                                android:orientation="vertical"
+                                android:scrollbars="none">
+
+                                <TextView
+                                    android:id="@+id/outputTextView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/input_edittext_bottom_corners_rounded_layout"
+                                    android:padding="10dp"
+                                    android:scrollbars="vertical"
+                                    android:textColor="@color/secondaryThemeColor"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold" />
+
+                            </ScrollView>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/outputDialogCopyShareLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#F3E5F5"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingStart="20dp"
+                        android:paddingTop="6dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/outputTextLayout">
+
+                        <ImageButton
+                            android:id="@+id/outputCopyRoundButton"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/coded_res_plus_round_blue_btn"
+                            android:src="@drawable/content_copy_white_18dp" />
+
+                        <ImageButton
+                            android:id="@+id/scanCodeOutputShareRoundButton"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_toEndOf="@+id/outputCopyRoundButton"
+                            android:background="@drawable/coded_res_plus_round_blue_btn"
+                            android:src="@drawable/share_white_18dp" />
+
+                        <TextView
+                            android:id="@+id/outputCharacterNumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="30dp"
+                            android:text="Output length: 100000"
+                            android:textColor="@color/secondaryThemeColor"
+                            android:textSize="15sp"
+                            android:textStyle="italic" />
+
+                    </RelativeLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </ScrollView>
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

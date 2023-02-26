@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="none">
+
+        <item
+            android:id="@+id/nav_explore"
+            android:icon="@drawable/explore_black_18dp"
+            android:title="Explore" />
+        <item
+            android:id="@+id/nav_scancode"
+            android:icon="@drawable/qr_code_black_18dp"
+            android:title="Scan Code" />
+        <item
+            android:id="@+id/nav_filecode"
+            android:icon="@drawable/file_lock"
+            android:title="File Encode" />
+
+    </group>
+
+    <item android:title="Machine Cipher">
+
+        <menu>
+
+                <item
+                    android:id="@+id/nav_enigma"
+                    android:icon="@drawable/enigma"
+                    android:title="Enigma" />
+                <item
+                    android:id="@+id/nav_lorenz"
+                    android:icon="@drawable/typewriter"
+                    android:title="Lorenz Machine" />
+
+        </menu>
+
+    </item>
+
+    <item android:title="More Options">
+
+        <menu>
+
+            <item
+                android:id="@+id/nav_settings"
+                android:icon="@drawable/settings_black_18dp"
+                android:title="Settings"/>
+
+            <item
+                android:id="@+id/nav_share_app"
+                android:icon="@drawable/share_black_18dp"
+                android:title="Share App" />
+
+            <item
+                android:id="@+id/nav_rate_us"
+                android:icon="@drawable/thumbs_up_down_black_18dp"
+                android:title="Rate Us" />
+
+            <item
+                android:id="@+id/nav_privacy_policy"
+                android:icon="@drawable/privacy_tip_black_18dp"
+                android:title="Privacy Policy" />
+
+        </menu>
+
+    </item>
+
+</menu>

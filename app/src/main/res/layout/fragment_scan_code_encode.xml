@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/scanCodeScrollLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/scanCodeInputTextLayout"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/input_edittext_linearlayout_top_rounded_corners"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <EditText
+                    android:id="@+id/scanCodeInputEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/input_edittext_top_corners_rounded_layout"
+                    android:padding="10dp" />
+
+                <LinearLayout
+                    android:id="@+id/scanCodeHomeScreenAdLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" />
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/scanCodeCopyPasteDelShareLayout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingTop="6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scanCodeInputTextLayout">
+
+                <ImageButton
+                    android:id="@+id/scanCodeInputCopyRoundButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/coded_res_plus_round_blue_btn"
+                    android:src="@drawable/content_copy_white_18dp" />
+
+                <ImageButton
+                    android:id="@+id/scanCodeInputPasteRoundButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@id/scanCodeInputCopyRoundButton"
+                    android:background="@drawable/coded_res_plus_round_blue_btn"
+                    android:src="@drawable/content_paste_white_18dp" />
+
+                <ImageButton
+                    android:id="@+id/scanCodeInputDeleteRoundButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@id/scanCodeInputPasteRoundButton"
+                    android:background="@drawable/coded_res_plus_round_blue_btn"
+                    android:src="@drawable/delete_white_18dp" />
+
+                <ImageButton
+                    android:id="@+id/scanCodeOutputShareRoundButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@id/scanCodeInputDeleteRoundButton"
+                    android:background="@drawable/coded_res_plus_round_blue_btn"
+                    android:src="@drawable/share_white_18dp" />
+
+                <TextView
+                    android:id="@+id/scanCodeOutputCharacterNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="30dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textColor="@color/secondaryThemeColor"
+                    android:textSize="15sp"
+                    android:textStyle="italic" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/scanCodeBarcodeProcedureCardLayout"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/thirdThemeColor"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scanCodeCopyPasteDelShareLayout">
+
+                <!--                <androidx.viewpager.widget.ViewPager-->
+                <!--                    android:id="@+id/scanCodeBarcodeProcedureCardViewPager"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="match_parent"-->
+                <!--                    android:layout_centerInParent="true"-->
+                <!--                    android:background="@color/thirdThemeColor"-->
+                <!--                    android:clipToPadding="false"-->
+                <!--                    android:foregroundGravity="center"-->
+                <!--                    android:overScrollMode="never" />-->
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/scanCodeBarcodeProcedureCardRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:background="@color/thirdThemeColor"
+                    android:clipToPadding="false"
+                    android:foregroundGravity="center"
+                    android:orientation="horizontal"
+                    android:overScrollMode="never" />
+
+            </RelativeLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/scanCodeImageParentWholeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scanCodeBarcodeProcedureCardLayout">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="15dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="10dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:background="@drawable/round_corner_blue_border"
+                    android:gravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/scanCodeBarcodeErrorTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="65dp"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="test text 10 10 test text 10 10 test text"
+                            android:textColor="@color/secondaryThemeColor"
+                            android:textSize="15dp" />
+
+
+                        <ImageView
+                            android:id="@+id/scanCodeBarcodeImageView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:cropToPadding="false"
+                            android:scaleType="center" />
+
+                    </FrameLayout>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/scanCodeProcedureTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@android:color/white"
+                    android:textColor="@color/secondaryThemeColor"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/scanCodeImageCloseBtn"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="50dp"
+                    android:src="@drawable/close_black_18dp"
+                    android:background="@drawable/round_corner_blue_border"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scanCodeImageParentWholeLayout">
+
+
+                <Button
+                    android:id="@+id/scanCodeSaveBtn"
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/rounded_corner_no_shadow_layout"
+                    android:text="SAVE"
+                    android:textColor="@color/primaryThemeColor"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/scanCodeShareBtn"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/scanCodeShareBtn"
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/rounded_corner_no_shadow_layout"
+                    android:text="SHARE"
+                    android:textColor="@color/primaryThemeColor"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/scanCodeSaveBtn"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
+                app:layout_constraintVertical_bias="1.0">
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

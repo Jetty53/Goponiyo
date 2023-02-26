@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6746c3</color>
+    <color name="colorPrimaryDark">#000063</color>
+    <color name="colorAccent">#311b92</color>
+    <color name="primaryThemeColor">#FFFFFF</color>
+    <color name="secondaryThemeColor">#311b92</color>
+    <color name="thirdThemeColor">#F3E5F5</color>
+    <color name="fourthThemeColor">#ECB1F5</color>
+    <color name="fifthThemeColor">#707070</color>
+    <color name="sixthThemeColor">#7171D5</color>
+    <color name="seventhThemeColor">#e0e0e0</color>
+
+    <color name="color1">#efebe9</color>
+    <color name="color2">#eceff1</color>
+    <color name="color3">#f5f5f5</color>
+    <color name="color4">#eeeeee</color>
+    <color name="color5">#e0e0e0</color>
+
+
+
+</resources>

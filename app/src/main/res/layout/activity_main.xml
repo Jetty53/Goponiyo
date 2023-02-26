@@ -1,0 +1,715 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity"
+    tools:openDrawer="start">
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/header"
+            app:menu="@menu/main_menu_cryptocode"/>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--    <LinearLayout-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:background="@android:color/holo_red_dark"-->
+        <!--        android:orientation="vertical"-->
+        <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:layout_constraintTop_toTopOf="parent">-->
+
+        <!--        <EditText-->
+        <!--            android:id="@+id/plainTextEditText"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="150dp"-->
+        <!--            android:background="@android:color/holo_red_light"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--            app:layout_constraintRight_toRightOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent" />-->
+        <!--        -->
+        <!--        <ScrollView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="150dp"-->
+        <!--            android:scrollbars="vertical"-->
+        <!--            android:layout_marginTop="40dp"-->
+        <!--            android:fillViewport="true">-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/cipherTextEditText"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="fill_parent"-->
+        <!--                android:textSize="20sp"-->
+        <!--                android:padding="20dp"-->
+        <!--                android:scrollbars="vertical"-->
+        <!--                android:textColor="@android:color/black"-->
+        <!--                android:background="@android:color/holo_red_light"-->
+        <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--                app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--                app:layout_constraintRight_toRightOf="parent"-->
+        <!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+
+        <!--        </ScrollView>-->
+
+
+        <!--    </LinearLayout>-->
+
+
+        <LinearLayout
+            android:id="@+id/topToolbarLAyout"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:background="@drawable/top_toolbar_border_layout"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/navigationDrawerButton"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/top_toolbar_rounded_menu_drawer_button"
+                android:src="@drawable/menu_white_18dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="3.5dp"
+                android:fontFamily="@font/ubuntu"
+                android:text="CryptoCode"
+                android:textAlignment="center"
+                android:textColor="#311B92"
+                android:textSize="25sp" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/encodeDecodeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#F3E5F5"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topToolbarLAyout">
+
+            <RadioGroup
+                android:id="@+id/encodeDecodeRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+<!--                android:onClick="encodeOnClick"-->
+                <RadioButton
+                    android:id="@+id/encodeRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#311B92"
+
+                    android:text="Encode"
+                    android:textColor="#311B92"
+                    android:textSize="20sp" />
+
+<!--                android:onClick="decodeOnClick"-->
+                <RadioButton
+                    android:id="@+id/decodeRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:buttonTint="#311B92"
+
+                    android:text="Decode"
+                    android:textColor="#311B92"
+                    android:textSize="20sp" />
+
+            </RadioGroup>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/scanCodeInputTextLayout"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/input_edittext_linearlayout_top_rounded_corners"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/encodeDecodeLayout">
+
+            <EditText
+                android:id="@+id/scanCodeInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="145dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/input_edittext_top_corners_rounded_layout"
+                android:padding="10dp" />
+
+            <LinearLayout
+                android:id="@+id/scanCodeHomeScreenAdLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" />
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/scanCodeCopyPasteDelShareLayout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#F3E5F5"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            android:paddingTop="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scanCodeInputTextLayout">
+
+            <ImageButton
+                android:id="@+id/scanCodeInputCopyRoundButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/coded_res_plus_round_blue_btn"
+                android:src="@drawable/content_copy_white_18dp" />
+
+            <ImageButton
+                android:id="@+id/scanCodeInputPasteRoundButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/scanCodeInputCopyRoundButton"
+                android:background="@drawable/coded_res_plus_round_blue_btn"
+                android:src="@drawable/content_paste_white_18dp" />
+
+            <ImageButton
+                android:id="@+id/scanCodeInputDeleteRoundButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/scanCodeInputPasteRoundButton"
+                android:background="@drawable/coded_res_plus_round_blue_btn"
+                android:src="@drawable/delete_white_18dp" />
+
+            <ImageButton
+                android:id="@+id/scanCodeOutputShareRoundButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/scanCodeInputDeleteRoundButton"
+                android:background="@drawable/coded_res_plus_round_blue_btn"
+                android:src="@drawable/share_white_18dp" />
+
+
+            <TextView
+                android:id="@+id/outputCharacterNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="30dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:textColor="@color/secondaryThemeColor"
+                android:textSize="15sp"
+                android:textStyle="italic" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/cipherTextFragContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scanCodeCopyPasteDelShareLayout"
+            app:layout_constraintVertical_bias="0.0">
+
+            <!--            <ScrollView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:fillViewport="true"-->
+            <!--                android:orientation="vertical">-->
+
+            <!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="0dp">-->
+
+            <!--                    <androidx.cardview.widget.CardView-->
+            <!--                        android:id="@+id/asciiCipherCard"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="40dp"-->
+            <!--                        android:layout_centerHorizontal="true"-->
+            <!--                        android:layout_marginStart="5dp"-->
+            <!--                        android:layout_marginTop="6dp"-->
+            <!--                        android:layout_marginEnd="5dp"-->
+            <!--                        android:clickable="true"-->
+            <!--                        android:focusable="true"-->
+            <!--                        android:foreground="?android:attr/selectableItemBackground"-->
+            <!--                        app:cardCornerRadius="15dp"-->
+            <!--                        app:cardElevation="10dp"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toTopOf="parent">-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center"-->
+            <!--                            android:fontFamily="@font/roboto_mono"-->
+            <!--                            android:text="ASCII"-->
+            <!--                            android:textColor="@color/secondaryThemeColor"-->
+            <!--                            android:textSize="22sp" />-->
+
+            <!--                    </androidx.cardview.widget.CardView>-->
+
+            <!--                    <androidx.cardview.widget.CardView-->
+            <!--                        android:id="@+id/adfgvxCipherCard"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="50dp"-->
+            <!--                        android:layout_centerHorizontal="true"-->
+            <!--                        android:layout_marginStart="5dp"-->
+            <!--                        android:layout_marginTop="6dp"-->
+            <!--                        android:layout_marginEnd="5dp"-->
+            <!--                        android:clickable="true"-->
+            <!--                        android:focusable="true"-->
+            <!--                        android:foreground="?android:attr/selectableItemBackground"-->
+            <!--                        app:cardCornerRadius="15dp"-->
+            <!--                        app:cardElevation="10dp"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/asciiCipherCard">-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center"-->
+            <!--                            android:fontFamily="@font/roboto_mono"-->
+            <!--                            android:text="ADFGVX"-->
+            <!--                            android:textColor="@color/secondaryThemeColor"-->
+            <!--                            android:textSize="22sp" />-->
+
+            <!--                    </androidx.cardview.widget.CardView>-->
+
+            <!--                    <androidx.cardview.widget.CardView-->
+            <!--                        android:id="@+id/affineCipherCard"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="50dp"-->
+            <!--                        android:layout_centerHorizontal="true"-->
+            <!--                        android:layout_marginStart="5dp"-->
+            <!--                        android:layout_marginTop="6dp"-->
+            <!--                        android:layout_marginEnd="5dp"-->
+            <!--                        android:clickable="true"-->
+            <!--                        android:focusable="true"-->
+            <!--                        android:foreground="?android:attr/selectableItemBackground"-->
+            <!--                        app:cardCornerRadius="15dp"-->
+            <!--                        app:cardElevation="10dp"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/adfgvxCipherCard">-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center"-->
+            <!--                            android:fontFamily="@font/roboto_mono"-->
+            <!--                            android:text="AFFINE"-->
+            <!--                            android:textColor="@color/secondaryThemeColor"-->
+            <!--                            android:textSize="22sp" />-->
+
+            <!--                    </androidx.cardview.widget.CardView>-->
+
+            <!--                    <androidx.cardview.widget.CardView-->
+            <!--                        android:id="@+id/atbashCipherCard"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="50dp"-->
+            <!--                        android:layout_centerHorizontal="true"-->
+            <!--                        android:layout_marginStart="5dp"-->
+            <!--                        android:layout_marginTop="6dp"-->
+            <!--                        android:layout_marginEnd="5dp"-->
+            <!--                        android:clickable="true"-->
+            <!--                        android:focusable="true"-->
+            <!--                        android:foreground="?android:attr/selectableItemBackground"-->
+            <!--                        app:cardCornerRadius="15dp"-->
+            <!--                        app:cardElevation="10dp"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/affineCipherCard">-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center"-->
+            <!--                            android:fontFamily="@font/roboto_mono"-->
+            <!--                            android:text="ATBASH"-->
+            <!--                            android:textColor="@color/secondaryThemeColor"-->
+            <!--                            android:textSize="22sp" />-->
+
+            <!--                    </androidx.cardview.widget.CardView>-->
+
+            <!--                    <androidx.cardview.widget.CardView-->
+            <!--                        android:id="@+id/autokeyCipherCard"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="50dp"-->
+            <!--                        android:layout_centerHorizontal="true"-->
+            <!--                        android:layout_marginStart="5dp"-->
+            <!--                        android:layout_marginTop="6dp"-->
+            <!--                        android:layout_marginEnd="5dp"-->
+            <!--                        android:clickable="true"-->
+            <!--                        android:focusable="true"-->
+            <!--                        android:foreground="?android:attr/selectableItemBackground"-->
+            <!--                        app:cardCornerRadius="15dp"-->
+            <!--                        app:cardElevation="10dp"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/atbashCipherCard">-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center"-->
+            <!--                            android:fontFamily="@font/roboto_mono"-->
+            <!--                            android:text="AUTOKEY"-->
+            <!--                            android:textColor="@color/secondaryThemeColor"-->
+            <!--                            android:textSize="22sp" />-->
+
+            <!--                    </androidx.cardview.widget.CardView>-->
+
+            <!--                    <androidx.cardview.widget.CardView-->
+            <!--                        android:id="@+id/binCipherCard"-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="50dp"-->
+            <!--                        android:layout_centerHorizontal="true"-->
+            <!--                        android:layout_marginStart="5dp"-->
+            <!--                        android:layout_marginTop="5dp"-->
+            <!--                        android:layout_marginEnd="5dp"-->
+            <!--                        android:clickable="true"-->
+            <!--                        android:focusable="true"-->
+            <!--                        android:foreground="?android:attr/selectableItemBackground"-->
+            <!--                        app:cardCornerRadius="15dp"-->
+            <!--                        app:cardElevation="10dp"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/autokeyCipherCard">-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center"-->
+            <!--                            android:fontFamily="@font/roboto_mono"-->
+            <!--                            android:text="BINARY"-->
+            <!--                            android:textColor="@color/secondaryThemeColor"-->
+            <!--                            android:textSize="22sp" />-->
+
+            <!--                    </androidx.cardview.widget.CardView>-->
+
+            <!--                    <androidx.cardview.widget.CardView-->
+            <!--                        android:id="@+id/beaufortCipherCard"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="50dp"-->
+            <!--                        android:layout_centerHorizontal="true"-->
+            <!--                        android:layout_marginStart="5dp"-->
+            <!--                        android:layout_marginTop="6dp"-->
+            <!--                        android:layout_marginEnd="5dp"-->
+            <!--                        android:clickable="true"-->
+            <!--                        android:focusable="true"-->
+            <!--                        android:foreground="?android:attr/selectableItemBackground"-->
+            <!--                        app:cardCornerRadius="15dp"-->
+            <!--                        app:cardElevation="10dp"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/binCipherCard">-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center"-->
+            <!--                            android:fontFamily="@font/roboto_mono"-->
+            <!--                            android:text="BEAUFORT"-->
+            <!--                            android:textColor="@color/secondaryThemeColor"-->
+            <!--                            android:textSize="22sp" />-->
+
+            <!--                    </androidx.cardview.widget.CardView>-->
+
+            <!--                    <androidx.cardview.widget.CardView-->
+            <!--                        android:id="@+id/base64CipherCard"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="50dp"-->
+            <!--                        android:layout_centerHorizontal="true"-->
+            <!--                        android:layout_marginStart="5dp"-->
+            <!--                        android:layout_marginTop="6dp"-->
+            <!--                        android:layout_marginEnd="5dp"-->
+            <!--                        android:clickable="true"-->
+            <!--                        android:focusable="true"-->
+            <!--                        android:foreground="?android:attr/selectableItemBackground"-->
+            <!--                        app:cardCornerRadius="15dp"-->
+            <!--                        app:cardElevation="10dp"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/beaufortCipherCard">-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center"-->
+            <!--                            android:fontFamily="@font/roboto_mono"-->
+            <!--                            android:text="BASE64"-->
+            <!--                            android:textColor="@color/secondaryThemeColor"-->
+            <!--                            android:textSize="22sp" />-->
+
+            <!--                    </androidx.cardview.widget.CardView>-->
+
+            <!--                    <androidx.cardview.widget.CardView-->
+            <!--                        android:id="@+id/caeserCipherCard"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="50dp"-->
+            <!--                        android:layout_centerHorizontal="true"-->
+            <!--                        android:layout_marginStart="5dp"-->
+            <!--                        android:layout_marginTop="6dp"-->
+            <!--                        android:layout_marginEnd="5dp"-->
+            <!--                        android:clickable="true"-->
+            <!--                        android:focusable="true"-->
+            <!--                        android:foreground="?android:attr/selectableItemBackground"-->
+            <!--                        app:cardCornerRadius="15dp"-->
+            <!--                        app:cardElevation="10dp"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/base64CipherCard">-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center"-->
+            <!--                            android:fontFamily="@font/roboto_mono"-->
+            <!--                            android:text="CAESER"-->
+            <!--                            android:textColor="@color/secondaryThemeColor"-->
+            <!--                            android:textSize="22sp" />-->
+
+            <!--                    </androidx.cardview.widget.CardView>-->
+
+            <!--                    <androidx.cardview.widget.CardView-->
+            <!--                        android:id="@+id/hexCipherCard"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="50dp"-->
+            <!--                        android:layout_centerHorizontal="true"-->
+            <!--                        android:layout_marginStart="5dp"-->
+            <!--                        android:layout_marginTop="6dp"-->
+            <!--                        android:layout_marginEnd="5dp"-->
+            <!--                        android:clickable="true"-->
+            <!--                        android:focusable="true"-->
+            <!--                        android:foreground="?android:attr/selectableItemBackground"-->
+            <!--                        app:cardCornerRadius="15dp"-->
+            <!--                        app:cardElevation="10dp"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/caeserCipherCard">-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center"-->
+            <!--                            android:fontFamily="@font/roboto_mono"-->
+            <!--                            android:text="HEXADECIMAL"-->
+            <!--                            android:textColor="@color/secondaryThemeColor"-->
+            <!--                            android:textSize="22sp" />-->
+
+            <!--                    </androidx.cardview.widget.CardView>-->
+
+            <!--                    <androidx.cardview.widget.CardView-->
+            <!--                        android:id="@+id/octalCipherCard"-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="50dp"-->
+            <!--                        android:layout_centerHorizontal="true"-->
+            <!--                        android:layout_marginStart="5dp"-->
+            <!--                        android:layout_marginTop="6dp"-->
+            <!--                        android:layout_marginEnd="5dp"-->
+            <!--                        android:clickable="true"-->
+            <!--                        android:focusable="true"-->
+            <!--                        android:foreground="?android:attr/selectableItemBackground"-->
+            <!--                        app:cardCornerRadius="15dp"-->
+            <!--                        app:cardElevation="10dp"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/hexCipherCard">-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center"-->
+            <!--                            android:fontFamily="@font/roboto_mono"-->
+            <!--                            android:text="OCTAL"-->
+            <!--                            android:textColor="@color/secondaryThemeColor"-->
+            <!--                            android:textSize="22sp" />-->
+
+            <!--                    </androidx.cardview.widget.CardView>-->
+
+            <!--                    <androidx.cardview.widget.CardView-->
+            <!--                        android:id="@+id/portaCipherCard"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="50dp"-->
+            <!--                        android:layout_centerHorizontal="true"-->
+            <!--                        android:layout_marginStart="5dp"-->
+            <!--                        android:layout_marginTop="6dp"-->
+            <!--                        android:layout_marginEnd="5dp"-->
+            <!--                        android:clickable="true"-->
+            <!--                        android:focusable="true"-->
+            <!--                        android:foreground="?android:attr/selectableItemBackground"-->
+            <!--                        app:cardCornerRadius="15dp"-->
+            <!--                        app:cardElevation="10dp"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/octalCipherCard">-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center"-->
+            <!--                            android:fontFamily="@font/roboto_mono"-->
+            <!--                            android:text="PORTA"-->
+            <!--                            android:textColor="@color/secondaryThemeColor"-->
+            <!--                            android:textSize="22sp" />-->
+
+            <!--                    </androidx.cardview.widget.CardView>-->
+
+            <!--                    <androidx.cardview.widget.CardView-->
+            <!--                        android:id="@+id/railfenceCipherCard"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="50dp"-->
+            <!--                        android:layout_centerHorizontal="true"-->
+            <!--                        android:layout_marginStart="5dp"-->
+            <!--                        android:layout_marginTop="6dp"-->
+            <!--                        android:layout_marginEnd="5dp"-->
+            <!--                        android:clickable="true"-->
+            <!--                        android:focusable="true"-->
+            <!--                        android:foreground="?android:attr/selectableItemBackground"-->
+            <!--                        app:cardCornerRadius="15dp"-->
+            <!--                        app:cardElevation="10dp"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/portaCipherCard">-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center"-->
+            <!--                            android:fontFamily="@font/roboto_mono"-->
+            <!--                            android:text="RAILFENCE"-->
+            <!--                            android:textColor="@color/secondaryThemeColor"-->
+            <!--                            android:textSize="22sp" />-->
+
+            <!--                    </androidx.cardview.widget.CardView>-->
+
+            <!--                    <androidx.cardview.widget.CardView-->
+            <!--                        android:id="@+id/rot13CipherCard"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="50dp"-->
+            <!--                        android:layout_centerHorizontal="true"-->
+            <!--                        android:layout_marginStart="5dp"-->
+            <!--                        android:layout_marginTop="6dp"-->
+            <!--                        android:layout_marginEnd="5dp"-->
+            <!--                        android:clickable="true"-->
+            <!--                        android:focusable="true"-->
+            <!--                        android:foreground="?android:attr/selectableItemBackground"-->
+            <!--                        app:cardCornerRadius="15dp"-->
+            <!--                        app:cardElevation="10dp"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/railfenceCipherCard">-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center"-->
+            <!--                            android:fontFamily="@font/roboto_mono"-->
+            <!--                            android:text="ROT13 CIPHER"-->
+            <!--                            android:textColor="@color/secondaryThemeColor"-->
+            <!--                            android:textSize="22sp" />-->
+
+            <!--                    </androidx.cardview.widget.CardView>-->
+
+            <!--                    <androidx.cardview.widget.CardView-->
+            <!--                        android:id="@+id/vigenereCipherCard"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="50dp"-->
+            <!--                        android:layout_centerHorizontal="true"-->
+            <!--                        android:layout_marginStart="5dp"-->
+            <!--                        android:layout_marginTop="6dp"-->
+            <!--                        android:layout_marginEnd="5dp"-->
+            <!--                        android:clickable="true"-->
+            <!--                        android:focusable="true"-->
+            <!--                        android:foreground="?android:attr/selectableItemBackground"-->
+            <!--                        app:cardCornerRadius="15dp"-->
+            <!--                        app:cardElevation="10dp"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/rot13CipherCard">-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center"-->
+            <!--                            android:fontFamily="@font/roboto_mono"-->
+            <!--                            android:text="VIGENERE"-->
+            <!--                            android:textColor="@color/secondaryThemeColor"-->
+            <!--                            android:textSize="22sp" />-->
+
+            <!--                    </androidx.cardview.widget.CardView>-->
+
+            <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+            <!--            </ScrollView>-->
+
+            <!--            <com.google.android.material.tabs.TabLayout-->
+            <!--                android:id="@+id/cipherTabLayout"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:background="@color/secondaryThemeColor"-->
+            <!--                app:tabIndicatorColor="@color/primaryThemeColor" />-->
+
+            <!--            <androidx.viewpager.widget.ViewPager-->
+            <!--                android:id="@+id/cipherMethodViewPager"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:layout_below="@+id/cipherTabLayout" />-->
+
+
+        </RelativeLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
